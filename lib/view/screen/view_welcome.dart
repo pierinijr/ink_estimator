@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:ink_estimator/languages/generated/app_localizations.dart';
 
 class ViewWelcome extends StatefulWidget {
   const ViewWelcome({super.key});
@@ -19,7 +20,8 @@ class _ViewWelcomeState extends State<ViewWelcome> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const <Widget>[
+          children: <Widget>[
+            Text(AppLocalizations.of(context)!.test)
           ],
         ),
       ),
