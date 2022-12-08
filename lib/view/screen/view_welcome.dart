@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Welcome extends StatefulWidget {
-  const Welcome({super.key});
+class ViewWelcome extends StatefulWidget {
+  const ViewWelcome({super.key});
 
   @override
-  State<Welcome> createState() => _WelcomeState();
+  State<ViewWelcome> createState() => _ViewWelcomeState();
 }
 
-class _WelcomeState extends State<Welcome> {
+class _ViewWelcomeState extends State<ViewWelcome> {
   int _counter = 0;
 
   void _incrementCounter() {
