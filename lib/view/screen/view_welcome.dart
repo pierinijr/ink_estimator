@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
+import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 
 class ViewWelcome extends StatefulWidget {
   const ViewWelcome({super.key});
@@ -14,17 +15,15 @@ class _ViewWelcomeState extends State<ViewWelcome> {
   Widget build(BuildContext context) {
     FlutterNativeSplash.remove();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Flutter"),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(AppLocalizations.of(context)!.test)
-          ],
-        ),
-      ),
-    );
+        body: BoxButtons(
+      firstTitle: AppLocalizations.of(context)!.next,
+      firstAction: () {
+        print("Button 1");
+      },
+      secondTitle: AppLocalizations.of(context)!.skip,
+      secondAction: () {
+        print("Button 2");
+      },
+    ));
   }
 }
