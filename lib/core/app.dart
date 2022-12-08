@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:ink_estimator/core/routes.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
 

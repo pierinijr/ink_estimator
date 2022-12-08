@@ -91,11 +91,35 @@ abstract class AppLocalizations {
     Locale('pt')
   ];
 
-  /// No description provided for @test.
+  /// No description provided for @next.
   ///
   /// In pt, this message translates to:
-  /// **'Teste'**
-  String get test;
+  /// **'Próximo'**
+  String get next;
+
+  /// No description provided for @skip.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pular'**
+  String get skip;
+
+  /// No description provided for @start.
+  ///
+  /// In pt, this message translates to:
+  /// **'Iniciar'**
+  String get start;
+
+  /// No description provided for @firstWelcomeView.
+  ///
+  /// In pt, this message translates to:
+  /// **'Está construindo, ou precisa reformar sua casa e não sabe como economizar dinheiro sem perder qualidade na hora de pintar?'**
+  String get firstWelcomeView;
+
+  /// No description provided for @secondWelcomeView.
+  ///
+  /// In pt, this message translates to:
+  /// **'Estamos aqui para te ajudar nessa decisão! Vamos calcular a quantidade de tinta necessária para os cômodos da sua casa?'**
+  String get secondWelcomeView;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

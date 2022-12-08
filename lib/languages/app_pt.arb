@@ -1,4 +1,8 @@
 {
     "@@locale": "pt",
-    "test": "Teste"
+    "next": "Próximo",
+    "skip": "Pular",
+    "start": "Iniciar",
+    "firstWelcomeView": "Está construindo, ou precisa reformar sua casa e não sabe como economizar dinheiro sem perder qualidade na hora de pintar?",
+    "secondWelcomeView": "Estamos aqui para te ajudar nessa decisão! Vamos calcular a quantidade de tinta necessária para os cômodos da sua casa?"
 }
