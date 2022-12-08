@@ -16,15 +16,8 @@ class InkEstimator extends StatelessWidget {
       ),
       initialRoute: "/welcome",
       routes: routes,
-      localizationsDelegates: const [
-        AppLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: const <Locale>[
-        Locale('pt')
-      ]
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
     );
   }
 }
