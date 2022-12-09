@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ink_estimator/core/constants/constants.dart';
+import 'package:ink_estimator/themes/colors.dart';
+import 'package:ink_estimator/view/widgets/alerts/alert_dialog_help.dart';
 
 class ViewHome extends StatefulWidget {
   const ViewHome({super.key});
@@ -8,38 +11,40 @@ class ViewHome extends StatefulWidget {
 }
 
 class _ViewHomeState extends State<ViewHome> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.secondaryColor,
       appBar: AppBar(
-        title: const Text("Flutter"),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        leadingWidth: 60,
+        leading: const SizedBox(),
+        title: Center(
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width * 0.4,
+            child: Image.asset(Constants.images.logo, fit: BoxFit.cover),
+          ),
+        ),
+        actions: [
+          SizedBox(
+            width: 60,
+            child: IconButton(
+              icon: const Icon(Icons.help_outline,
+                  color: AppColors.primaryColor, size: 20),
+              onPressed: () {
+                showDialogUnderstandScore(context);
+              },
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          children: const <Widget>[],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
