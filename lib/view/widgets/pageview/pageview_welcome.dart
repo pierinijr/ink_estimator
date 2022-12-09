@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ink_estimator/core/constants/constants.dart';
+import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/label/label_welcome.dart';
 
 class PageViewWelcome extends StatelessWidget {
@@ -15,7 +16,7 @@ class PageViewWelcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: screenList[index]['background_color'],
+      backgroundColor: AppColors.secondaryColor,
       body: SafeArea(
           child: Stack(
         children: [

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class RoomViewModel extends ChangeNotifier {
-
   int _indicatorsPages = 0;
-
   int get indicatorsPages {
     return _indicatorsPages;
   }

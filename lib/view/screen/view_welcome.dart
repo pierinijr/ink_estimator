@@ -28,19 +28,7 @@ class _ViewWelcomeState extends State<ViewWelcome> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> screenList = [
-      {
-        "label": AppLocalizations.of(context)!.firstWelcomeView,
-        "background_color": AppColors.secondaryColor,
-        "image": ConstantsWelcome.images.firstImage,
-      },
-      {
-        "label": AppLocalizations.of(context)!.secondWelcomeView,
-        "background_color": AppColors.secondaryColor,
-        "image": ConstantsWelcome.images.secondImage,
-      }
-    ];
-
+    List<Map<String, dynamic>> screenList = getScreenList(context);
     RoomViewModel roomViewModel = context.watch<RoomViewModel>();
     return Scaffold(
         body: Stack(
@@ -111,4 +99,18 @@ class _ViewWelcomeState extends State<ViewWelcome> {
       ],
     ));
   }
+}
+
+List<Map<String, dynamic>> getScreenList(BuildContext context) {
+  List<Map<String, dynamic>> screenList = [
+      {
+        "label": AppLocalizations.of(context)!.firstWelcomeView,
+        "image": ConstantsWelcome.images.firstImage,
+      },
+      {
+        "label": AppLocalizations.of(context)!.secondWelcomeView,
+        "image": ConstantsWelcome.images.secondImage,
+      }
+    ];
+  return screenList;
 }
