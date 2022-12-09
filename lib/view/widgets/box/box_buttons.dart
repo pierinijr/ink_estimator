@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ink_estimator/languages/generated/app_localizations.dart';
 import 'package:ink_estimator/view/widgets/buttons/button_primary.dart';
 import 'package:ink_estimator/view/widgets/buttons/button_secondary.dart';
 

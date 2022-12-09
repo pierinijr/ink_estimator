@@ -17,6 +17,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get close => 'Fechar';
 
   @override
+  String get calculate => 'Calcular';
+
+  @override
+  String get clean => 'Limpar';
+
+  @override
   String get firstWelcomeView => 'Está construindo, ou precisa reformar sua casa e não sabe como economizar dinheiro sem perder qualidade na hora de pintar?';
 
   @override
@@ -51,4 +57,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get commentsAppHelp => 'Observação: Sempre confira o rendimento da marca que você está comprando. Cada litro de tinta considerado nos cálculos é capaz de pintar 5 metros quadrados.';
+
+  @override
+  String get initPageHome => 'Para podermos te ajudar, preencha os campos abaixo com as medidas em centímetro quadrado do seu cômodo. Caso precise de ajuda, ou queira entender o cálculo que realizamos basta clicar no ponto de interrogação aqui em cima.';
 }

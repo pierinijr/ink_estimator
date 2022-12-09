@@ -5,7 +5,6 @@ import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/alerts/alert_dialog_help.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 import 'package:ink_estimator/view/widgets/box/box_cards.dart';
-import 'package:ink_estimator/view/widgets/cards/card_measurement.dart';
 import 'package:ink_estimator/view/widgets/label/label_h2.dart';
 
 class ViewHome extends StatefulWidget {

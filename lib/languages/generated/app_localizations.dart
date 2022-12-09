@@ -115,6 +115,18 @@ abstract class AppLocalizations {
   /// **'Fechar'**
   String get close;
 
+  /// No description provided for @calculate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Calcular'**
+  String get calculate;
+
+  /// No description provided for @clean.
+  ///
+  /// In pt, this message translates to:
+  /// **'Limpar'**
+  String get clean;
+
   /// No description provided for @firstWelcomeView.
   ///
   /// In pt, this message translates to:
@@ -186,6 +198,12 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Observação: Sempre confira o rendimento da marca que você está comprando. Cada litro de tinta considerado nos cálculos é capaz de pintar 5 metros quadrados.'**
   String get commentsAppHelp;
+
+  /// No description provided for @initPageHome.
+  ///
+  /// In pt, this message translates to:
+  /// **'Para podermos te ajudar, preencha os campos abaixo com as medidas em centímetro quadrado do seu cômodo. Caso precise de ajuda, ou queira entender o cálculo que realizamos basta clicar no ponto de interrogação aqui em cima.'**
+  String get initPageHome;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
