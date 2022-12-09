@@ -4,6 +4,8 @@ class Constants {
 }
 
 class ConstantsSpacings {
+  double get spacing4 => 4;
+  double get spacing12 => 12;
   double get spacing16 => 16;
   double get spacing24 => 24;
   double get spacing36 => 36;
