@@ -59,7 +59,7 @@ List<Map<String, dynamic>> getContent(BuildContext context) {
   return content;
 }
 
-Future<void> showDialogUnderstandScore(BuildContext context) {
+Future<void> showHelpDialog(BuildContext context) {
   return showDialog(
     context: context,
     builder: (BuildContext context) => const AlertDialogHelp(),
