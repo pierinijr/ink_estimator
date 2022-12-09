@@ -39,9 +39,7 @@ class _BoxButtonsState extends State<BoxButtons> {
             widget.secondTitle != null && widget.secondAction != null 
               ? ButtonSecondary(
                 title: AppLocalizations.of(context)!.skip,
-                action: () {
-                  print("Button 2");
-                },
+                action: widget.secondAction
               )
               : const SizedBox(height: 40, width: 250)
           ],
