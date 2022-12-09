@@ -4,6 +4,8 @@
     "skip": "Pular",
     "start": "Iniciar",
     "close": "Fechar",
+    "calculate": "Calcular",
+    "clean": "Limpar",
     "firstWelcomeView": "Está construindo, ou precisa reformar sua casa e não sabe como economizar dinheiro sem perder qualidade na hora de pintar?",
     "secondWelcomeView": "Estamos aqui para te ajudar nessa decisão! Vamos calcular a quantidade de tinta necessária para os cômodos da sua casa?",
     "introAppHelp": "Para deixar sua casa como voce sempre sonhou, temos várias medidas diferentes em cada cômodo. Como queremos te ajudar a pintar as paredes economizando o máximo de tinta possivel, não podemos esquecer das portas e das janelas não é mesmo? Então, para que possamos ter um cálculo mais preciso, seguimos algumas regras:",
@@ -15,5 +17,6 @@
     "measurementsAppHelp": "Cada porta possui as medidas: 0,80 x 1,90\nCada janela possui as medidas: 2,00 x 1,20",
     "variationAppHelp": "Variações das latas de tinta que levamos em consideração:",
     "measuresOfCansAppHelp": "0,5 L\n2,5 L\n3,6 L\n18 L",
-    "commentsAppHelp": "Observação: Sempre confira o rendimento da marca que você está comprando. Cada litro de tinta considerado nos cálculos é capaz de pintar 5 metros quadrados."
+    "commentsAppHelp": "Observação: Sempre confira o rendimento da marca que você está comprando. Cada litro de tinta considerado nos cálculos é capaz de pintar 5 metros quadrados.",
+    "initPageHome": "Para podermos te ajudar, preencha os campos abaixo com as medidas em centímetro quadrado do seu cômodo. Caso precise de ajuda, ou queira entender o cálculo que realizamos basta clicar no ponto de interrogação aqui em cima."
 }
