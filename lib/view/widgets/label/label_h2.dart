@@ -6,13 +6,16 @@ class LabelH2 extends LabelBase {
   const LabelH2({
     Key? key,
     required label,
+    fontWeightType = FontWeight.normal,
+    height = 1.5,
+    textAlign = TextAlign.start
   }) : super(
             key: key,
             label: label,
             fontSize: 14,
-            height: 1.5,
-            fontWeightType: FontWeight.normal,
+            height: height,
+            fontWeightType: fontWeightType,
             color: AppColors.primaryColor,
-            textAlign: TextAlign.start
+            textAlign: textAlign
             );
 }
