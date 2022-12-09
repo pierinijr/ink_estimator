@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:ink_estimator/core/constants/welcome.dart';
+import 'package:ink_estimator/core/utils.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
@@ -74,22 +75,13 @@ class _ViewWelcomeState extends State<ViewWelcome> {
                               },
                               secondTitle: AppLocalizations.of(context)!.skip,
                               secondAction: () {
-                                // TODO: Atualizar localização da função
-                                Navigator.pushNamedAndRemoveUntil(
-                                  context,
-                                  "/home",
-                                  ModalRoute.withName('/welcome'),
-                                );
+                                Utils.goView(context, "/home");
                               },
                             )
                           : BoxButtons(
                               firstTitle: AppLocalizations.of(context)!.start,
                               firstAction: () {
-                                Navigator.pushNamedAndRemoveUntil(
-                                  context,
-                                  "/home",
-                                  ModalRoute.withName('/welcome'),
-                                );
+                                Utils.goView(context, "/home");
                               })
                     ],
                   );
