@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:ink_estimator/core/constants/welcome.dart';
 import 'package:ink_estimator/core/utils.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
+import 'package:ink_estimator/model/content_model.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 import 'package:ink_estimator/view/widgets/pageview/pageview_welcome.dart';
-import 'package:ink_estimator/view_model/room_view_model.dart';
+import 'package:ink_estimator/view_model/content_view_model.dart';
+import 'package:ink_estimator/view_model/welcome_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -28,14 +29,18 @@ class _ViewWelcomeState extends State<ViewWelcome> {
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> screenList = getScreenList(context);
-    RoomViewModel roomViewModel = context.watch<RoomViewModel>();
+    List<ContentModel> screenList =
+        Provider.of<ContentViewModel>(context, listen: false)
+            .getScreenList(context);
+    WelcomeViewModel roomViewModel = context.watch<WelcomeViewModel>();
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: Stack(
       children: [
         PageView(
           onPageChanged: (page) {
-            Provider.of<RoomViewModel>(context, listen: false).setWelcomeView(page);
+            Provider.of<WelcomeViewModel>(context, listen: false)
+                .setWelcomeView(page);
           },
           controller: _pageController,
           children: [
@@ -99,18 +104,4 @@ class _ViewWelcomeState extends State<ViewWelcome> {
       ],
     ));
   }
-}
-
-List<Map<String, dynamic>> getScreenList(BuildContext context) {
-  List<Map<String, dynamic>> screenList = [
-      {
-        "label": AppLocalizations.of(context)!.firstWelcomeView,
-        "image": ConstantsWelcome.images.firstImage,
-      },
-      {
-        "label": AppLocalizations.of(context)!.secondWelcomeView,
-        "image": ConstantsWelcome.images.secondImage,
-      }
-    ];
-  return screenList;
 }

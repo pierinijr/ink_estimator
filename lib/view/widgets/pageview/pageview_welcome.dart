@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ink_estimator/core/constants/constants.dart';
+import 'package:ink_estimator/model/content_model.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/label/label_welcome.dart';
 
@@ -11,11 +12,12 @@ class PageViewWelcome extends StatelessWidget {
   });
 
   final int index;
-  final List<Map<String, dynamic>> screenList;
+  final List<ContentModel> screenList;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.secondaryColor,
       body: SafeArea(
           child: Stack(
@@ -25,7 +27,7 @@ class PageViewWelcome extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage(screenList[index]['image']),
+                  image: AssetImage(screenList[index].image),
                   alignment: Alignment.bottomRight,
                   fit: BoxFit.cover,
                 ),
@@ -36,7 +38,7 @@ class PageViewWelcome extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     horizontal: Constants.spacings.spacing24,
                     vertical: Constants.spacings.spacing48),
-                child: LabelWelcome(label: screenList[index]['label'])),
+                child: LabelWelcome(label: screenList[index].label)),
           ),
         ],
       )),
