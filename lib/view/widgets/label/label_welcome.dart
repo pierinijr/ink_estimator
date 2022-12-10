@@ -6,6 +6,7 @@ class LabelWelcome extends LabelBase {
   LabelWelcome({
     Key? key,
     required label,
+    fontWeightType = FontWeight.w800
   }) : super(
             key: key,
             label: label,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ink_estimator/languages/generated/app_localizations.dart';
 import 'package:ink_estimator/view/widgets/buttons/button_primary.dart';
 import 'package:ink_estimator/view/widgets/buttons/button_secondary.dart';
 
@@ -38,7 +37,7 @@ class _BoxButtonsState extends State<BoxButtons> {
             ),
             widget.secondTitle != null && widget.secondAction != null 
               ? ButtonSecondary(
-                title: AppLocalizations.of(context)!.skip,
+                title: widget.secondTitle,
                 action: widget.secondAction
               )
               : const SizedBox(height: 40, width: 250)
