@@ -3,10 +3,13 @@ import 'package:ink_estimator/core/constants/constants.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/label/label_h2.dart';
 import 'package:ink_estimator/view/widgets/modal/modal_card.dart';
+import 'package:ink_estimator/view_model/room_view_model.dart';
+import 'package:provider/provider.dart';
 
 class CardMeasurement extends StatefulWidget {
-  const CardMeasurement({super.key, required this.image, required this.label});
+  const CardMeasurement({super.key, required this.index, required this.image, required this.label});
 
+  final int index;
   final String image;
   final String label;
 
@@ -18,7 +21,11 @@ class _CardMeasurementState extends State<CardMeasurement> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => {showModal(context)},
+      onTap: () => {
+        Provider.of<RoomViewModel>(context, listen: false)
+            .setSelectedCard(widget.index),
+        showModal(context)
+      },
       child: Container(
         color: AppColors.secondaryColor,
         height: 80,
