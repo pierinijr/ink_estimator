@@ -4,7 +4,6 @@ import 'package:ink_estimator/core/constants/modal.dart';
 import 'package:ink_estimator/core/utils.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
 import 'package:ink_estimator/model/result_model.dart';
-import 'package:ink_estimator/model/room_model.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 import 'package:ink_estimator/view/widgets/box/box_input.dart';
@@ -25,29 +24,28 @@ class _BoxFormState extends State<BoxForm> {
   final doorsInputController = TextEditingController();
   final windowsInputController = TextEditingController();
 
-  double validateParameters(String text) {
-    return text.isNotEmpty ? double.parse(text) : 0;
+  void saveData() {
+    ResultModel result = Provider.of<RoomViewModel>(context, listen: false)
+        .saveData(
+            context,
+            heightInputController.text,
+            widthInputController.text,
+            doorsInputController.text,
+            windowsInputController.text);
+            
+    if (result.success) {
+      Utils.showToast(result.message, AppColors.success);
+      Navigator.pop(context);
+    } else {
+      Utils.showToast(result.message, AppColors.error);
+    }
   }
 
-  void saveData() {
-    int? selectedCard =
-        Provider.of<RoomViewModel>(context, listen: false).selectedCard;
-    if (selectedCard != null) {
-      RoomModel data = RoomModel(
-          index: selectedCard,
-          height: validateParameters(heightInputController.text),
-          width: validateParameters(widthInputController.text),
-          doors: validateParameters(doorsInputController.text),
-          windows: validateParameters(windowsInputController.text));
-      ResultModel result =
-          Provider.of<RoomViewModel>(context, listen: false).saveData(context, data);
-      if (result.success) {
-        Utils.showToast(result.message, AppColors.success);
-        Navigator.pop(context);
-      } else {
-        Utils.showToast(result.message, AppColors.error);
-      }
-    }
+  void cleanFormData() {
+    heightInputController.text = "";
+    widthInputController.text = "";
+    doorsInputController.text = "";
+    windowsInputController.text = "";
   }
 
   @override
@@ -100,7 +98,9 @@ class _BoxFormState extends State<BoxForm> {
             saveData();
           },
           secondTitle: AppLocalizations.of(context)!.clean,
-          secondAction: () {},
+          secondAction: () {
+            cleanFormData();
+          },
         ),
       ),
     ]);
