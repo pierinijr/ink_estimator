@@ -13,4 +13,8 @@ class AppColors {
     200: Color(0xFFFFFFFF),
     900: Color(0xFF000000),
   };
+
+  static const success = Color(0xFF4ABB6B);
+
+  static const error = Color(0xFFE2231A);
 }

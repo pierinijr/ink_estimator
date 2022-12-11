@@ -25,6 +25,7 @@ class _BoxCardsState extends State<BoxCards> {
           (index) => Padding(
             padding: EdgeInsets.only(bottom: Constants.spacings.spacing24),
             child: CardMeasurement(
+                index: index,
                 label: cardsParameters[index].label,
                 image: cardsParameters[index].image),
           ),
