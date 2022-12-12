@@ -24,6 +24,11 @@ class RoomViewModel extends ChangeNotifier {
     return _inkQuantity;
   }
 
+  void setListData(List<RoomModel> listData) {
+    _listData = listData;
+    notifyListeners();
+  }
+
   void setSelectedCard(int index) {
     _selectedCard = index;
     notifyListeners();
@@ -40,7 +45,8 @@ class RoomViewModel extends ChangeNotifier {
 
     data.area = Utils.areaCalculator(height, width);
 
-    data.doorsAndWindowsArea = Utils.doorsAndWindowsAreaCalculator(data.doors, data.windows);
+    data.doorsAndWindowsArea =
+        Utils.doorsAndWindowsAreaCalculator(data.doors, data.windows);
 
     data.dimensions =
         "${height.toStringAsFixed(1)} X ${width.toStringAsFixed(1)}";
@@ -58,7 +64,8 @@ class RoomViewModel extends ChangeNotifier {
     return data;
   }
 
-  ResultModel saveData(BuildContext context, String height, String width, String doors, String windows) {
+  ResultModel saveData(BuildContext context, String height, String width,
+      String doors, String windows) {
     if (_selectedCard != null) {
       RoomModel data = RoomModel(
           index: _selectedCard ?? 0,
@@ -87,8 +94,10 @@ class RoomViewModel extends ChangeNotifier {
 
   InkModel getQuantity(BuildContext context) {
     if (_listData.length < 4) {
-      return InkModel(success: false, message: AppLocalizations.of(context)!.errorCalculate);
-    } 
+      return InkModel(
+          success: false,
+          message: AppLocalizations.of(context)!.errorCalculate);
+    }
 
     double availableArea = Calculator.areaCalculator(context);
     InkModel inkQuantity = Calculator.inkCalculator(context, availableArea);
