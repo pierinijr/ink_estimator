@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:ink_estimator/core/constants/constants.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
 import 'package:ink_estimator/model/door_model.dart';
-import 'package:ink_estimator/model/ink_model.dart';
 import 'package:ink_estimator/model/window_model.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/label/label_h2.dart';
+import 'package:ink_estimator/view/widgets/tables/table_result.dart';
 
 class Utils {
   static void goView(
@@ -20,6 +21,7 @@ class Utils {
   }
 
   static void showToast(String message, Color color) {
+    Fluttertoast.cancel();
     Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_LONG,
@@ -30,7 +32,7 @@ class Utils {
   }
 
   static Future<void> showAlertResult(
-      BuildContext context, InkModel result) async {
+      BuildContext context) async {
     return await showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -40,9 +42,14 @@ class Utils {
           fontWeightType: FontWeight.w700,
         ),
         content: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             LabelH2(
               label: AppLocalizations.of(context)!.introAlertResult,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: Constants.spacings.spacing24),
+              child: const TableResult(),
             ),
           ],
         ),
