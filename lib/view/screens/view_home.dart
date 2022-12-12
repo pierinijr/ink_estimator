@@ -24,7 +24,7 @@ class _ViewHomeState extends State<ViewHome> {
         Provider.of<RoomViewModel>(context, listen: false).getQuantity(context);
 
     if (result.success) {
-      Utils.showAlertResult(context, result);
+      Utils.showAlertResult(context);
     } else {
       Utils.showToast(result.message, AppColors.error);
     }

@@ -10,6 +10,7 @@ import 'package:ink_estimator/model/room_model.dart';
 class RoomViewModel extends ChangeNotifier {
   int? _selectedCard;
   List<RoomModel> _listData = [];
+  InkModel? _inkQuantity;
 
   int? get selectedCard {
     return _selectedCard;
@@ -17,6 +18,10 @@ class RoomViewModel extends ChangeNotifier {
 
   List<RoomModel> get listData {
     return _listData;
+  }
+
+  InkModel? get inkQuantity {
+    return _inkQuantity;
   }
 
   void setSelectedCard(int index) {
@@ -87,6 +92,9 @@ class RoomViewModel extends ChangeNotifier {
 
     double availableArea = Calculator.areaCalculator(context);
     InkModel inkQuantity = Calculator.inkCalculator(context, availableArea);
+
+    _inkQuantity = inkQuantity;
+    notifyListeners();
 
     return inkQuantity;
   }
