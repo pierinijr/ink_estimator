@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ink_estimator/core/constants/constants.dart';
 import 'package:ink_estimator/core/constants/modal.dart';
+import 'package:ink_estimator/core/utils.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
+import 'package:ink_estimator/model/result_model.dart';
+import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 import 'package:ink_estimator/view/widgets/box/box_input.dart';
 import 'package:ink_estimator/view/widgets/label/label_h2.dart';
+import 'package:ink_estimator/view_model/room_view_model.dart';
+import 'package:provider/provider.dart';
 
 class BoxForm extends StatefulWidget {
   const BoxForm({super.key});
@@ -18,8 +23,31 @@ class _BoxFormState extends State<BoxForm> {
   final widthInputController = TextEditingController();
   final doorsInputController = TextEditingController();
   final windowsInputController = TextEditingController();
-  final areaInputController = TextEditingController();
-  
+
+  void saveData() {
+    ResultModel result = Provider.of<RoomViewModel>(context, listen: false)
+        .saveData(
+            context,
+            heightInputController.text,
+            widthInputController.text,
+            doorsInputController.text,
+            windowsInputController.text);
+            
+    if (result.success) {
+      Utils.showToast(result.message, AppColors.success);
+      Navigator.pop(context);
+    } else {
+      Utils.showToast(result.message, AppColors.error);
+    }
+  }
+
+  void cleanFormData() {
+    heightInputController.text = "";
+    widthInputController.text = "";
+    doorsInputController.text = "";
+    windowsInputController.text = "";
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
@@ -40,11 +68,10 @@ class _BoxFormState extends State<BoxForm> {
               image: ConstantsModal.images.heightModalImage,
             ),
             BoxInput(
-              controller: widthInputController,
-              label: AppLocalizations.of(context)!.width,
-              placeHolder: AppLocalizations.of(context)!.centimeters,
-              image: ConstantsModal.images.widthModalImage
-            ),
+                controller: widthInputController,
+                label: AppLocalizations.of(context)!.width,
+                placeHolder: AppLocalizations.of(context)!.centimeters,
+                image: ConstantsModal.images.widthModalImage),
             BoxInput(
               controller: doorsInputController,
               label: AppLocalizations.of(context)!.doors,
@@ -57,13 +84,6 @@ class _BoxFormState extends State<BoxForm> {
               placeHolder: AppLocalizations.of(context)!.quantityExample,
               image: ConstantsModal.images.windowsModalImage,
             ),
-            BoxInput(
-              controller: areaInputController,
-              label: AppLocalizations.of(context)!.area,
-              placeHolder: AppLocalizations.of(context)!.totalArea,
-              image: ConstantsModal.images.areaModalImage,
-              disable: true
-            ),
           ],
         ),
       ),
@@ -74,9 +94,13 @@ class _BoxFormState extends State<BoxForm> {
         ),
         child: BoxButtons(
           firstTitle: AppLocalizations.of(context)!.save,
-          firstAction: () {},
+          firstAction: () {
+            saveData();
+          },
           secondTitle: AppLocalizations.of(context)!.clean,
-          secondAction: () {},
+          secondAction: () {
+            cleanFormData();
+          },
         ),
       ),
     ]);

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:ink_estimator/core/constants/constants.dart';
+import 'package:ink_estimator/core/utils.dart';
 import 'package:ink_estimator/languages/generated/app_localizations.dart';
+import 'package:ink_estimator/model/ink_model.dart';
 import 'package:ink_estimator/themes/colors.dart';
 import 'package:ink_estimator/view/widgets/alerts/alert_dialog_help.dart';
 import 'package:ink_estimator/view/widgets/box/box_buttons.dart';
 import 'package:ink_estimator/view/widgets/box/box_cards.dart';
 import 'package:ink_estimator/view/widgets/label/label_h2.dart';
+import 'package:ink_estimator/view_model/room_view_model.dart';
+import 'package:provider/provider.dart';
 
 class ViewHome extends StatefulWidget {
   const ViewHome({super.key});
@@ -15,6 +19,17 @@ class ViewHome extends StatefulWidget {
 }
 
 class _ViewHomeState extends State<ViewHome> {
+  void getQuantity(BuildContext context) {
+    InkModel result =
+        Provider.of<RoomViewModel>(context, listen: false).getQuantity(context);
+
+    if (result.success) {
+      Utils.showAlertResult(context);
+    } else {
+      Utils.showToast(result.message, AppColors.error);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,18 +73,22 @@ class _ViewHomeState extends State<ViewHome> {
                     LabelH2(label: AppLocalizations.of(context)!.initPageHome),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: Constants.spacings.spacing12),
-                child: const BoxCards()
-              ),
+                  padding: EdgeInsets.symmetric(
+                      vertical: Constants.spacings.spacing12),
+                  child: const BoxCards()),
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: Constants.spacings.spacing24),
                 child: BoxButtons(
                   firstTitle: AppLocalizations.of(context)!.calculate,
-                  firstAction: () {},
+                  firstAction: () {
+                    getQuantity(context);
+                  },
                   secondTitle: AppLocalizations.of(context)!.clean,
-                  secondAction: () {},
+                  secondAction: () {
+                    Provider.of<RoomViewModel>(context, listen: false)
+                        .cleanData();
+                  },
                 ),
               ),
             ],
