@@ -18,6 +18,8 @@
     "left": "Esquerda",
     "right": "Direita",
     "back": "Atrás",
+    "cans": "Latas",
+    "quantity": "Quantidade",
     "emptyInfos": "Nenhuma porta ou janela",
     "tryAgain": "Tente novamente preenchendo os dados necessários",
     "firstWelcomeView": "Está construindo, ou precisa reformar sua casa e não sabe como economizar dinheiro sem perder qualidade na hora de pintar?",
