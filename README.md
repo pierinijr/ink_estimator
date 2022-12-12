@@ -18,7 +18,6 @@ Esse projeto foi desenvolvido utilizando:
 * [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash/)
 * [Smooth Page Indicator](https://pub.dev/packages/smooth_page_indicator/)
 * [Fluttertoast](https://pub.dev/packages/fluttertoast/)
-* [Fluttertoast](https://pub.dev/packages/fluttertoast/)
 
 Versões utilizadas no desenvolvimento:
 
