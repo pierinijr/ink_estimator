@@ -1,9 +1,5 @@
 # Boas vindas ao repositório Code Challenge!
 
-<h1 align="center">
-  <img src="image.png">
-</h1>
-
 - Nesse projeto foi desenvolvido uma aplicação mobile que ajuda o usuário a calcular a quantidade de tinta necessária para pintar uma sala.
 
 - Essa aplicação considera que a sala é composta de 4 paredes e permite que o usuário escolha qual a medida de cada parede e quantas janelas e portas possuem cada parede.
