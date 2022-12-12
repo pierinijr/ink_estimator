@@ -50,6 +50,8 @@ flutter pub get
 # Executar testes
 flutter test
 
+Observação: Para rodar os testes antes do build no emulador, é necessário rodar o comando 'flutter build apk', caso contrário, poderá apresentar erros ao encontrar os arquivos do AppLocalizations.
+
 # Executar projeto
 Execute o projeto em um emulador Android ou iOS.
 ```
