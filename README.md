@@ -1,4 +1,4 @@
-# Boas vindas ao repositório Code Challenge!
+# Boas vindas ao repositório Ink Estimator!
 
 - Nesse projeto foi desenvolvido uma aplicação mobile que ajuda o usuário a calcular a quantidade de tinta necessária para pintar uma sala.
 
@@ -39,7 +39,7 @@ Com os softwares instalados, siga as instruções abaixo:
 
 ```bash
 # Clonar o repositório
-git clone https://gitlab.com/pimentajr/ink_estimator.git
+git clone https://github.com/pimentajr/ink_estimator.git
 
 # Entrar no diretório
 cd ink_estimator
